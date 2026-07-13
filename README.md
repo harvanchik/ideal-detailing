@@ -19,6 +19,10 @@ npm run dev
 
 Set `VITE_CALCOM_URL` to a public Cal.com event URL to activate the embedded booking calendar.
 
+## Pricing content
+
+Package prices, service lists, add-ons, the monthly subscription, and value propositions are stored in `src/lib/pricing.ts`. The `/pricing` route renders that data through reusable Svelte components.
+
 ## Quality checks
 
 ```sh

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	import { site } from '$lib/site';
 
 	const bookingUrl = import.meta.env.VITE_CALCOM_URL?.trim();
@@ -13,15 +13,7 @@
 	/>
 </svelte:head>
 
-<header class="site-header-shell">
-	<div class="site-header">
-		<a class="brand" href={resolve('/')} aria-label={`${site.name} home`}>
-			<span class="brand-mark" aria-hidden="true">ID</span>
-			<span class="brand-copy"><strong>IDEAL</strong><small>DETAILING</small></span>
-		</a>
-		<a class="text-link" href={resolve('/')}>Back to home</a>
-	</div>
-</header>
+<SiteHeader active="book" />
 
 <main class="booking-page section-shell">
 	<div class="booking-heading">

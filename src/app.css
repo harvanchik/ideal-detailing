@@ -188,6 +188,13 @@ nav > a:not(.button):hover {
 	color: white;
 }
 
+nav > a.active,
+nav > a[aria-current='page']:not(.button) {
+	color: white;
+	border-bottom: 2px solid var(--accent);
+	text-shadow: 0 0 0.8rem rgb(18 107 255 / 48%);
+}
+
 .hero {
 	position: relative;
 	display: grid;
@@ -480,6 +487,10 @@ nav > a:not(.button):hover {
 	text-transform: uppercase;
 }
 
+.home-package-grid .card-status {
+	font-size: 0.9rem;
+}
+
 .section-muted {
 	position: relative;
 	border-block: 1px solid rgb(18 107 255 / 20%);
@@ -725,6 +736,12 @@ nav > a:not(.button):hover {
 		grid-template-columns: 1.2fr 0.8fr;
 		align-items: end;
 		gap: 5rem;
+	}
+}
+
+@media (min-width: 70rem) {
+	.home-package-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 

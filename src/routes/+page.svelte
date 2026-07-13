@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
+	import { pricingPackages } from '$lib/pricing';
 	import { site } from '$lib/site';
+
+	const previewFeatures = (detailPackage: (typeof pricingPackages)[number]) =>
+		[...detailPackage.interior, ...detailPackage.exterior].slice(0, 3);
 </script>
 
 <svelte:head>
@@ -13,19 +18,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
-<header class="site-header-shell">
-	<div class="site-header">
-		<a class="brand" href={resolve('/')} aria-label={`${site.name} home`}>
-			<span class="brand-mark" aria-hidden="true">ID</span>
-			<span class="brand-copy"><strong>IDEAL</strong><small>DETAILING</small></span>
-		</a>
-		<nav aria-label="Primary navigation">
-			<a href="#services">Services</a>
-			<a href="#process">How it works</a>
-			<a class="button button-small" href={resolve('/book')}>Book now</a>
-		</nav>
-	</div>
-</header>
+<SiteHeader active="home" />
 
 <main>
 	<section class="hero">
@@ -66,23 +59,23 @@
 				<p class="eyebrow">Detail packages</p>
 				<h2>Choose your level of clean.</h2>
 			</div>
-			<p>Packages, prices, and exact inclusions can be swapped in once your content is ready.</p>
+			<p>Four levels of mobile detailing, starting at $75. Choose your package and book online.</p>
 		</div>
-		<div class="card-grid">
-			{#each site.services as service (service.number)}
-				<article class="card" style={`--card-accent: ${service.accent}`}>
+		<div class="card-grid home-package-grid">
+			{#each pricingPackages as detailPackage, index (detailPackage.slug)}
+				<article class="card" style={`--card-accent: ${detailPackage.accent}`}>
 					<div class="card-topline">
-						<span class="card-number" aria-hidden="true">Package {service.number}</span>
-						<span class="card-status">Mobile</span>
+						<span class="card-number" aria-hidden="true">Package 0{index + 1}</span>
+						<span class="card-status">${detailPackage.price}</span>
 					</div>
-					<h3>{service.name}</h3>
-					<p>{service.description}</p>
+					<h3>{detailPackage.name}</h3>
+					<p>Professional mobile service completed at your home or workplace.</p>
 					<ul>
-						{#each service.features as feature (feature)}
+						{#each previewFeatures(detailPackage) as feature (feature)}
 							<li>{feature}</li>
 						{/each}
 					</ul>
-					<a href={resolve('/book')}>Book this service <span aria-hidden="true">-&gt;</span></a>
+					<a href={resolve('/pricing')}>View package <span aria-hidden="true">-&gt;</span></a>
 				</article>
 			{/each}
 		</div>
@@ -121,7 +114,7 @@
 		</div>
 	</section>
 
-	<section class="final-cta-shell">
+	<section class="final-cta-shell" id="about">
 		<div class="section-shell final-cta">
 			<div>
 				<p class="eyebrow">Ready when you are</p>
@@ -135,7 +128,7 @@
 	</section>
 </main>
 
-<footer class="site-footer section-shell">
+<footer class="site-footer section-shell" id="contact">
 	<a class="brand footer-brand" href={resolve('/')} aria-label={`${site.name} home`}>
 		<span class="brand-mark" aria-hidden="true">ID</span>
 		<span class="brand-copy"><strong>IDEAL</strong><small>DETAILING</small></span>

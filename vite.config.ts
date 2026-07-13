@@ -15,7 +15,7 @@ export default defineConfig({
 		}),
 		SvelteKitPWA({
 			registerType: 'autoUpdate',
-			includeAssets: ['favicon.svg', 'hero-detailing.jpg'],
+			includeAssets: ['favicon.svg', 'hero-detailing.jpg', 'plastic-restore-before-after.jpg'],
 			manifest: {
 				name: 'Ideal Detailing',
 				short_name: 'Ideal Detailing',
