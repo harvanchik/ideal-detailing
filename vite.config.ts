@@ -15,13 +15,13 @@ export default defineConfig({
 		}),
 		SvelteKitPWA({
 			registerType: 'autoUpdate',
-			includeAssets: ['favicon.svg'],
+			includeAssets: ['favicon.svg', 'hero-detailing.jpg'],
 			manifest: {
 				name: 'Ideal Detailing',
 				short_name: 'Ideal Detailing',
 				description: 'Convenient mobile car detailing, booked around your schedule.',
-				theme_color: '#0f172a',
-				background_color: '#f8fafc',
+				theme_color: '#02040a',
+				background_color: '#02040a',
 				display: 'standalone',
 				start_url: '/',
 				scope: '/',

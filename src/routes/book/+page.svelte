@@ -13,12 +13,14 @@
 	/>
 </svelte:head>
 
-<header class="site-header">
-	<a class="brand" href={resolve('/')} aria-label={`${site.name} home`}>
-		<span class="brand-mark" aria-hidden="true">ID</span>
-		<span>{site.name}</span>
-	</a>
-	<a class="text-link" href={resolve('/')}>Back to home</a>
+<header class="site-header-shell">
+	<div class="site-header">
+		<a class="brand" href={resolve('/')} aria-label={`${site.name} home`}>
+			<span class="brand-mark" aria-hidden="true">ID</span>
+			<span class="brand-copy"><strong>IDEAL</strong><small>DETAILING</small></span>
+		</a>
+		<a class="text-link" href={resolve('/')}>Back to home</a>
+	</div>
 </header>
 
 <main class="booking-page section-shell">
