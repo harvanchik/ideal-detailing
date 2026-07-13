@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import type { PricingPackage } from '$lib/pricing';
 
 	let { detailPackage }: { detailPackage: PricingPackage } = $props();
@@ -44,7 +43,7 @@
 		</ul>
 	</section>
 
-	<a class="package-button" href={resolve('/book')}>Book now</a>
+	<a class="package-button" href="#booking">Book now</a>
 </article>
 
 <style>

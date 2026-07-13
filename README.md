@@ -21,7 +21,7 @@ Set `VITE_CALCOM_URL` to a public Cal.com event URL to activate the embedded boo
 
 ## Pricing content
 
-Package prices, service lists, add-ons, the monthly subscription, and value propositions are stored in `src/lib/pricing.ts`. The `/pricing` route renders that data through reusable Svelte components.
+Package prices, service lists, add-ons, the monthly subscription, and value propositions are stored in `src/lib/pricing.ts`. The single landing page renders that data once through reusable Svelte components. Navigation uses section anchors, while legacy `/pricing` and `/book` links redirect to the matching section.
 
 ## Quality checks
 

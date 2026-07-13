@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-
 	let {
 		service
 	}: {
@@ -35,7 +33,7 @@
 	</ul>
 
 	<div class="restore-price"><small>A full car</small><strong>${service.price}</strong></div>
-	<a class="restore-button" href={resolve('/book')}>Book now</a>
+	<a class="restore-button" href="#booking">Book now</a>
 </article>
 
 <style>
